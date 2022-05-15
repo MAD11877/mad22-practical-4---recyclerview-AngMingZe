@@ -10,7 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    public class User{
+    public static class User{
         //Attr
         String name;
         String description;

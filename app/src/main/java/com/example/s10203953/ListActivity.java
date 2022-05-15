@@ -2,6 +2,8 @@ package com.example.s10203953;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -9,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ListActivity extends AppCompatActivity {
@@ -17,6 +20,42 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        ArrayList<MainActivity.User> users = new ArrayList<>();
+
+        int random;
+        for (int i = 0;i < 20;i++){
+            String name = "Name";
+            String des = "Description ";
+            boolean fol = false;
+            int id = 0;
+            random = 0;
+            //name
+            random = new Random().nextInt(99999);
+            name = name + random;
+            //description
+            random = new Random().nextInt(99999);
+            des = des + random;
+            //id
+            random = new Random().nextInt(99999);
+            id = random;
+            //follow status
+            random = new Random().nextInt(2);
+            if (random == 0){
+                fol = true;
+            }
+            else{
+                fol = false;
+            }
+            MainActivity.User temp = new MainActivity.User(name,des,id,fol);
+            users.add(temp);
+        }
+
+        RecyclerView rv = findViewById(R.id.rv);
+        vAdapt adapt = new vAdapt(users);
+        LinearLayoutManager layout = new LinearLayoutManager(this);
+
+        rv.setLayoutManager(layout);
+        rv.setAdapter(adapt);
     }
 
     public void alertDia(View v){
@@ -34,8 +73,8 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent goNext = new Intent(ListActivity.this,MainActivity.class);
-                final int random = new Random().nextInt(1000+1) ;
-                goNext.putExtra("rInte",random);
+                //MainActivity.User wenty = new MainActivity.User();
+                //goNext.putExtra("rInte",wenty);
                 startActivity(goNext);
             }
         }).show();

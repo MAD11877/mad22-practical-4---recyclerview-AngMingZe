@@ -2651,6 +2651,7 @@ int id decor_content_parent 0x7f08008e
 int id default_activity_button 0x7f08008f
 int id deltaRelative 0x7f080090
 int id dependency_ordering 0x7f080091
+int id descrip 0x7f0801e2
 int id design_bottom_sheet 0x7f080092
 int id design_menu_item_action_area 0x7f080093
 int id design_menu_item_action_area_stub 0x7f080094
@@ -2745,7 +2746,7 @@ int id linear 0x7f0800ec
 int id listMode 0x7f0800ed
 int id list_item 0x7f0800ee
 int id logo 0x7f0800ef
-int id logo2 0x7f0800f0
+int id logorv 0x7f0801e3
 int id masked 0x7f0800f1
 int id match_constraint 0x7f0800f2
 int id match_parent 0x7f0800f3
@@ -2803,6 +2804,7 @@ int id mtrl_picker_text_input_range_start 0x7f080126
 int id mtrl_picker_title_text 0x7f080127
 int id mtrl_view_tag_bottom_padding 0x7f080128
 int id multiply 0x7f080129
+int id name 0x7f0801e4
 int id navigation_bar_item_active_indicator_view 0x7f08012a
 int id navigation_bar_item_icon_container 0x7f08012b
 int id navigation_bar_item_icon_view 0x7f08012c
@@ -2853,6 +2855,7 @@ int id right_icon 0x7f080158
 int id right_side 0x7f080159
 int id rounded 0x7f08015a
 int id row_index_key 0x7f08015b
+int id rv 0x7f0801e5
 int id save_non_transition_alpha 0x7f08015c
 int id save_overlay_view 0x7f08015d
 int id sawtooth 0x7f08015e
@@ -3142,6 +3145,7 @@ int layout notification_template_custom_big 0x7f0b005e
 int layout notification_template_icon_group 0x7f0b005f
 int layout notification_template_part_chronometer 0x7f0b0060
 int layout notification_template_part_time 0x7f0b0061
+int layout recycleview 0x7f0b0075
 int layout select_dialog_item_material 0x7f0b0062
 int layout select_dialog_multichoice_material 0x7f0b0063
 int layout select_dialog_singlechoice_material 0x7f0b0064
