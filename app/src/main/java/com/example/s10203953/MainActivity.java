@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -29,16 +30,21 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        User u1 = new User("Name","Description",01,false);
+
+        Intent receivingEnd = getIntent();
+        Bundle test = receivingEnd.getBundleExtra("UserInfo");
+        String n = test.getString("Name");
+        String des = test.getString("Description");
+        TextView name = findViewById(R.id.hworld);
+        name.setText(n);
+        TextView descrip = findViewById(R.id.text1);
+        descrip.setText(des);
+
+        User u1 = new User(n,des,01,false);
         if (u1.followed == true){
             Button b1 = findViewById(R.id.follow);
             b1.setText("Unfollow");
         }
-        Intent receivingEnd = getIntent();
-        int message = receivingEnd.getIntExtra("rInte",66);
-        TextView hello = findViewById(R.id.hworld);
-        hello.setText("MAD + " + message);
-
     }
 
     public void followBut(View v){
@@ -55,5 +61,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Unfollowed",Toast.LENGTH_SHORT).show();
         }
     }
+
 
 }

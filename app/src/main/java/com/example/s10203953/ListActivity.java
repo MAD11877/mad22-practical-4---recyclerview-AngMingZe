@@ -9,6 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -73,8 +74,17 @@ public class ListActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 Intent goNext = new Intent(ListActivity.this,MainActivity.class);
-                //MainActivity.User wenty = new MainActivity.User();
-                //goNext.putExtra("rInte",wenty);
+
+                TextView name = findViewById(R.id.name);
+                String n = name.getText().toString();
+
+                TextView des = findViewById(R.id.descrip);
+                String d = des.getText().toString();
+
+                Bundle user = new Bundle();
+                user.putString("Name",n);
+                user.putString("Description",d);
+                goNext.putExtra("UserInfo",user);
                 startActivity(goNext);
             }
         }).show();
